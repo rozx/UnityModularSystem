@@ -18,7 +18,7 @@ namespace ModularSystem{
 		
 		public ModularSystem modularSystem;
 		
-		private bool partSetFoldout;
+		private bool partSetFoldout = true;
 		private List<ReorderableList> partLists = new List<ReorderableList>();
 		
 		private int drawingListIndex;
@@ -68,7 +68,7 @@ namespace ModularSystem{
 				
 				if(GUILayout.Button("Randomize seed")){
 					
-					
+					modularSystem.randomSeed = GetRandomizeSeed();
 					
 				}
 				
@@ -90,6 +90,29 @@ namespace ModularSystem{
 				
 			}
 			
+			
+			// begin area of starting mode
+			
+			modularSystem.myStartMethod = (StartingMethod)EditorGUILayout.EnumPopup("Generation Method:", modularSystem.myStartMethod);
+			
+			
+			switch(modularSystem.myStartMethod){
+				
+			case StartingMethod.Awake:
+				
+				EditorGUILayout.HelpBox("Procedural generation will start at the Begining of the game.",MessageType.Info);
+				
+				break;
+				
+			case StartingMethod.OnCall:
+				
+				EditorGUILayout.HelpBox("Procedural generation will be execute when player called [ModuleSystem.StartGenerate] function.",MessageType.Info);
+				
+				break;
+				
+				
+				
+			}
 			
 			// begin area of part set settings
 			
@@ -115,6 +138,13 @@ namespace ModularSystem{
 					ps.name = EditorGUILayout.TextField("Part Set Name:", ps.name);
 					
 					ps.attachTransform = (Transform)EditorGUILayout.ObjectField("Attached Transform: ",ps.attachTransform,typeof(Transform),true);
+						
+						if(ps.attachTransform && ps.attachTransform.gameObject){
+							
+							if(ps.name.Contains("new Part Set")) ps.name = ps.attachTransform.gameObject.name;
+							
+						}
+						
 					
 					EditorGUILayout.Separator();
 					
@@ -126,15 +156,6 @@ namespace ModularSystem{
 					
 					partLists[index].DoLayoutList();
 					
-
-					
-					// button of new part
-					
-					if(GUILayout.Button("New Part")){
-						
-						CreateNewPart(ps);
-						
-					}
 					
 					
 					
@@ -182,7 +203,15 @@ namespace ModularSystem{
 		
 		public int GetRandomizeSeed(){
 			
-			return 0;
+			
+			
+			Random.InitState(System.DateTime.Now.GetHashCode());
+			
+			int seed = Mathf.RoundToInt( Random.Range(-2147483648,2147483648));
+
+			if(seed == modularSystem.randomSeed) seed = GetRandomizeSeed();
+			
+			return seed;
 			
 		}
 		
@@ -262,6 +291,8 @@ namespace ModularSystem{
 		
 		public void DrawPartElement(Rect rect, int index, bool isActive, bool isFocused){
 			
+			// Draw each element in the list
+			
 			Part p = modularSystem.partSetList[drawingListIndex].partList[index];
 			
 			p.name = EditorGUI.TextField(new Rect(rect.x + 10, rect.y + 5, rect.width - 18, 15), "Name: ",p.name);
@@ -272,6 +303,7 @@ namespace ModularSystem{
 			
 			p.prefab = (GameObject)EditorGUI.ObjectField(new Rect(rect.x + 10, rect.y + 110, rect.width - 18, 15),"Part Prefab:",p.prefab,typeof(GameObject),true);
 			
+			if(p.prefab && p.name.Contains("NewPart")) p.name = p.prefab.name;
 		}
 		
 		
