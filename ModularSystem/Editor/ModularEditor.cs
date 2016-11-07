@@ -22,6 +22,12 @@ namespace ModularSystem{
 		private List<ReorderableList> partLists = new List<ReorderableList>();
 		
 		private int drawingListIndex;
+		private int partListIndex;
+		//private ReorderableList activateList;
+		private GameObject lastPreviewGameObject;
+		private Part selectingPart;
+		private List<GameObject> previewGameObjects = new List<GameObject>();
+		
 		
 		// This function is called when the object is loaded.
 		protected void OnEnable()
@@ -32,6 +38,20 @@ namespace ModularSystem{
 			UpdatePartList();
 			
 		}
+		
+		protected void OnDisable()
+		{
+			
+			// remove the previewing gameobject
+			
+			if(lastPreviewGameObject) DestroyImmediate(lastPreviewGameObject);
+			
+			// remove all preview gameobjects
+			
+			ClearPreviewGameObjects();
+			
+		}
+		
 		
 		
 		public override void OnInspectorGUI()
@@ -114,6 +134,21 @@ namespace ModularSystem{
 				
 			}
 			
+			// show preview button
+			
+			if(GUILayout.Button("[ Preview ]")){
+				
+				Preview();
+			}
+			
+			if(GUILayout.Button("[ Stop Preview ]")){
+				
+				ClearPreviewGameObjects();
+			}
+			
+			
+			EditorGUILayout.HelpBox("While previewing in the editor view, the seed mode will not be applied.",MessageType.Info);
+			
 			// begin area of part set settings
 			
 			partSetFoldout = EditorGUILayout.Foldout(partSetFoldout,"Part set settings");
@@ -121,54 +156,64 @@ namespace ModularSystem{
 			
 			if(partSetFoldout){
 			
-				EditorGUILayout.HelpBox("Here is the area where you can set up procedure generated gameobjects.",MessageType.Info);
-				
-				// for each partset
-				
-				
-				foreach(PartSet ps in modularSystem.partSetList.ToArray()){
+					EditorGUILayout.HelpBox("Here is the area where you can set up procedure generated gameobjects.",MessageType.Info);
+					
+					// for each partset
 					
 					
-					ps.isActivate = EditorGUILayout.BeginToggleGroup(ps.name,ps.isActivate);
-					
-					if(ps.isActivate){
-					
-					// indivudial partset settings
-					
-					ps.name = EditorGUILayout.TextField("Part Set Name:", ps.name);
-					
-					ps.attachTransform = (Transform)EditorGUILayout.ObjectField("Attached Transform: ",ps.attachTransform,typeof(Transform),true);
+					foreach(PartSet ps in modularSystem.partSetList.ToArray()){
 						
-						if(ps.attachTransform && ps.attachTransform.gameObject){
+						
+						ps.isActivate = EditorGUILayout.BeginToggleGroup(ps.name,ps.isActivate);
+						
+						if(ps.isActivate){
+						
+						// indivudial partset settings
+						
+						ps.name = EditorGUILayout.TextField("Part Set Name:", ps.name);
+						
+						ps.attachTransform = (Transform)EditorGUILayout.ObjectField("Attached Transform: ",ps.attachTransform,typeof(Transform),true);
 							
-							if(ps.name.Contains("new Part Set")) ps.name = ps.attachTransform.gameObject.name;
+							if(ps.attachTransform && ps.attachTransform.gameObject){
+								
+								if(ps.name.Contains("new Part Set")) ps.name = ps.attachTransform.gameObject.name;
+								
+							}
+							
+						
+						EditorGUILayout.Separator();
+						
+						// start of part settings
+						
+						int index = modularSystem.partSetList.IndexOf(ps);
+						
+						drawingListIndex = index;
+						
+						partLists[index].DoLayoutList();
+						
+							
+						// Duplicate part set
+							
+							if(GUILayout.Button("Duplicate Part Set:[" + ps.name + "]")){
+							
+								if (EditorUtility.DisplayDialog("Duplicate Item", "Do you really want to create a new copy of [" + ps.name + "]?", "Yes","Cancel"))
+								{
+									DuplicatePartSet(ps);
+								}
 							
 						}
 						
-					
-					EditorGUILayout.Separator();
-					
-					// start of part settings
-					
-					int index = modularSystem.partSetList.IndexOf(ps);
-					
-					drawingListIndex = index;
-					
-					partLists[index].DoLayoutList();
-					
-					
-					
-					
-					// delete part set button
-					
-					if(GUILayout.Button("Delete Part Set:[" + ps.name + "]")){
 						
-						if (EditorUtility.DisplayDialog("Delete Item", "Do you really want to delete [" + ps.name + "]?", "Yes","Cancel"))
-						{
-							DeletePartSet(ps);
+						// delete part set button
+						
+						if(GUILayout.Button("Delete Part Set:[" + ps.name + "]")){
+							
+							if (EditorUtility.DisplayDialog("Delete Item", "Do you really want to delete [" + ps.name + "]?", "Yes","Cancel"))
+							{
+								DeletePartSet(ps);
+							}
+							
 						}
-						
-					}
 					}
 					
 					
@@ -195,6 +240,22 @@ namespace ModularSystem{
 			
 			
 			EditorGUILayout.EndVertical();
+			
+			// update the preview gameobject
+			
+			if(lastPreviewGameObject) {
+				
+
+				
+				//Transform attachTransform = modularSystem.partSetList[drawingListIndex].attachTransform;
+				lastPreviewGameObject.transform.localPosition = selectingPart.position;
+				lastPreviewGameObject.transform.localScale = selectingPart.scale;
+				lastPreviewGameObject.transform.localEulerAngles = selectingPart.rotation;
+				
+				
+				
+			}
+			
 			
 			Repaint();
 			
@@ -238,6 +299,30 @@ namespace ModularSystem{
 		}
 		
 		
+		public void DuplicatePartSet(PartSet ps){
+			
+			PartSet _ps = new PartSet();
+			
+			_ps.attachTransform = ps.attachTransform;
+			_ps.isActivate = ps.isActivate;
+			_ps.name = ps.name;
+			
+			foreach (Part item in ps.partList)
+			{
+				
+				_ps.partList.Add(item);
+				
+			}
+			
+			
+			modularSystem.partSetList.Add(_ps);
+			
+			UpdatePartList();
+			
+			
+		}
+		
+		
 		public void CreateNewPart(PartSet ps){
 			
 			Part newPart = new Part();
@@ -245,7 +330,7 @@ namespace ModularSystem{
 			newPart.name = "NewPart[" + ps.partList.Count.ToString() + "]";
 			newPart.position = Vector3.zero;
 			newPart.rotation = Vector3.zero;
-			newPart.scale = Vector3.zero;
+			newPart.scale = Vector3.one;
 			
 			newPart.weight = 0;
 			
@@ -262,7 +347,7 @@ namespace ModularSystem{
 			newPart.name = "NewPart[" + rl.list.Count.ToString() + "]";
 			newPart.position = Vector3.zero;
 			newPart.rotation = Vector3.zero;
-			newPart.scale = Vector3.zero;
+			newPart.scale = Vector3.one;
 			
 			newPart.weight = 0;
 			
@@ -280,11 +365,48 @@ namespace ModularSystem{
 		
 		public void SelectPartElement(ReorderableList list){
 			
+			ClearPreviewGameObjects();
+			
+			int index = list.index;
+			//activateList = list;
+			selectingPart = (Part)list.list[index];
+			Transform attachTransform = modularSystem.partSetList[drawingListIndex].attachTransform;
+			
+			//Debug.Log(selectingPart.rotation);
+			
+			
+			
+			if(selectingPart.prefab && attachTransform){
+				
+				if(lastPreviewGameObject){
+					
+					DestroyImmediate(lastPreviewGameObject);
+					
+				}
+				
+				// preview the prefab
+				
+				GameObject previewGameObject = Instantiate(selectingPart.prefab,attachTransform.position,Quaternion.identity) as GameObject;
+				
+				previewGameObject.transform.SetParent(attachTransform,true);
+				
+				previewGameObject.transform.localPosition += selectingPart.position;
+				previewGameObject.transform.localEulerAngles = selectingPart.rotation;
+				previewGameObject.transform.localScale = selectingPart.scale;
+				
+				
+				
+				lastPreviewGameObject = previewGameObject;
+				
+			}
+			
 			
 			
 		}
 		
 		public void DrawHeader(Rect rect){
+			
+			EditorGUI.LabelField(new Rect(rect.x, rect.y , rect.width , 15), "Part Set: " + modularSystem.partSetList[drawingListIndex].name);
 			
 		}
 		
@@ -325,8 +447,77 @@ namespace ModularSystem{
 				partLists[index].drawElementCallback = DrawPartElement;
 				partLists[index].onAddCallback = CreateNewPart;
 				partLists[index].drawHeaderCallback = DrawHeader;
+				partLists[index].onSelectCallback = SelectPartElement;
 				
 			}
+			
+		}
+		
+		
+		public void ClearPreviewGameObjects(){
+			
+			if(previewGameObjects.Count > 0) {
+			
+			
+			foreach(GameObject item in previewGameObjects.ToArray()){
+				
+				DestroyImmediate(item);
+				
+				
+			}
+			
+			
+				previewGameObjects.Clear();
+			}
+			
+		}
+		
+		
+		public void Preview(){
+			
+			
+			// clear the preview first
+			
+			ClearPreviewGameObjects();
+			
+			GameObject _preview = new GameObject();
+			
+			_preview.name = "_preview";
+			
+			
+			
+			_preview.transform.SetParent(modularSystem.gameObject.transform,false);
+
+			
+			
+			
+			foreach (PartSet _ps in modularSystem.partSetList.ToArray())
+			{
+				
+				if(_ps.isActivate){
+				
+					// for each partset, spawn gameobjects
+					
+					int index = Mathf.RoundToInt(Random.Range(0,_ps.partList.Count));
+					
+					GameObject _part = Instantiate(_ps.partList[index].prefab,Vector3.zero, Quaternion.Euler(_ps.attachTransform.localEulerAngles)) as GameObject;
+					
+					_part.transform.SetParent(_preview.transform,false);
+					
+					_part.transform.position = _ps.attachTransform.position + _ps.partList[index].position;
+					_part.transform.localEulerAngles += _ps.partList[index].rotation;
+					_part.transform.localScale = _ps.partList[index].scale;
+					
+					
+					
+					
+					
+					previewGameObjects.Add(_part);
+				}
+				
+			}
+			
+			previewGameObjects.Add(_preview);
 			
 		}
 		

@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 72e643619fa32984785527a0c110a313
+timeCreated: 1462019795
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bench
+    100002: BenchTable
+    100004: Boat
+    100006: Bridge
+    100008: Bush
+    100010: DoubleBench
+    100012: FanceConnector
+    100014: Fence_0
+    100016: Flowers
+    100018: Fountain1
+    100020: Fountain_1
+    100022: GrassTile
+    100024: Lamp
+    100026: //RootNode
+    100028: Rock
+    100030: Tile_Area
+    100032: Tile_Area2
+    100034: Tile_Corner
+    100036: Tile_High
+    100038: Tile_Intersection
+    100040: Tile_Intersection2
+    100042: Tile_Road
+    100044: Tole_Med
+    100046: Trassh Bin
+    100048: Tree_1
+    100050: Tree_2
+    100052: Tree_3
+    100054: Tree_4
+    100056: Tree_5
+    100058: WaterTile.
+    100060: Wooden Bridge
+    400000: Bench
+    400002: BenchTable
+    400004: Boat
+    400006: Bridge
+    400008: Bush
+    400010: DoubleBench
+    400012: FanceConnector
+    400014: Fence_0
+    400016: Flowers
+    400018: Fountain1
+    400020: Fountain_1
+    400022: GrassTile
+    400024: Lamp
+    400026: //RootNode
+    400028: Rock
+    400030: Tile_Area
+    400032: Tile_Area2
+    400034: Tile_Corner
+    400036: Tile_High
+    400038: Tile_Intersection
+    400040: Tile_Intersection2
+    400042: Tile_Road
+    400044: Tole_Med
+    400046: Trassh Bin
+    400048: Tree_1
+    400050: Tree_2
+    400052: Tree_3
+    400054: Tree_4
+    400056: Tree_5
+    400058: WaterTile.
+    400060: Wooden Bridge
+    2300000: Bench
+    2300002: BenchTable
+    2300004: Boat
+    2300006: Bridge
+    2300008: Bush
+    2300010: DoubleBench
+    2300012: FanceConnector
+    2300014: Fence_0
+    2300016: Flowers
+    2300018: Fountain1
+    2300020: Fountain_1
+    2300022: GrassTile
+    2300024: Lamp
+    2300026: Rock
+    2300028: Tile_Area
+    2300030: Tile_Area2
+    2300032: Tile_Corner
+    2300034: Tile_High
+    2300036: Tile_Intersection
+    2300038: Tile_Intersection2
+    2300040: Tile_Road
+    2300042: Tole_Med
+    2300044: Trassh Bin
+    2300046: Tree_1
+    2300048: Tree_2
+    2300050: Tree_3
+    2300052: Tree_4
+    2300054: Tree_5
+    2300056: WaterTile.
+    2300058: Wooden Bridge
+    3300000: Bench
+    3300002: BenchTable
+    3300004: Boat
+    3300006: Bridge
+    3300008: Bush
+    3300010: DoubleBench
+    3300012: FanceConnector
+    3300014: Fence_0
+    3300016: Flowers
+    3300018: Fountain1
+    3300020: Fountain_1
+    3300022: GrassTile
+    3300024: Lamp
+    3300026: Rock
+    3300028: Tile_Area
+    3300030: Tile_Area2
+    3300032: Tile_Corner
+    3300034: Tile_High
+    3300036: Tile_Intersection
+    3300038: Tile_Intersection2
+    3300040: Tile_Road
+    3300042: Tole_Med
+    3300044: Trassh Bin
+    3300046: Tree_1
+    3300048: Tree_2
+    3300050: Tree_3
+    3300052: Tree_4
+    3300054: Tree_5
+    3300056: WaterTile.
+    3300058: Wooden Bridge
+    4300000: DoubleBench
+    4300002: BenchTable
+    4300004: Tree_3
+    4300006: Tile_High
+    4300008: Tile_Intersection
+    4300010: Tile_Area
+    4300012: Tole_Med
+    4300014: WaterTile.
+    4300016: Tile_Corner
+    4300018: Tile_Area2
+    4300020: GrassTile
+    4300022: Bridge
+    4300024: Wooden Bridge
+    4300026: Boat
+    4300028: Tile_Road
+    4300030: Tile_Intersection2
+    4300032: FanceConnector
+    4300034: Fence_0
+    4300036: Rock
+    4300038: Lamp
+    4300040: Tree_1
+    4300042: Tree_2
+    4300044: Tree_4
+    4300046: Bush
+    4300048: Flowers
+    4300050: Trassh Bin
+    4300052: Tree_5
+    4300054: Fountain_1
+    4300056: Fountain1
+    4300058: Bench
+    6400000: Bench
+    6400002: BenchTable
+    6400004: Boat
+    6400006: Bridge
+    6400008: Bush
+    6400010: DoubleBench
+    6400012: FanceConnector
+    6400014: Fence_0
+    6400016: Flowers
+    6400018: Fountain1
+    6400020: Fountain_1
+    6400022: GrassTile
+    6400024: Lamp
+    6400026: Rock
+    6400028: Tile_Area
+    6400030: Tile_Area2
+    6400032: Tile_Corner
+    6400034: Tile_High
+    6400036: Tile_Intersection
+    6400038: Tile_Intersection2
+    6400040: Tile_Road
+    6400042: Tole_Med
+    6400044: Trassh Bin
+    6400046: Tree_1
+    6400048: Tree_2
+    6400050: Tree_3
+    6400052: Tree_4
+    6400054: Tree_5
+    6400056: WaterTile.
+    6400058: Wooden Bridge
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

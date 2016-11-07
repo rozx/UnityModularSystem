@@ -26,7 +26,11 @@ namespace ModularSystem{
 		
 		public List<PartSet> partSetList = new List<PartSet>();
 		
-		
+		// Awake is called when the script instance is being loaded.
+		protected void Awake()
+		{
+			
+		}
 		
 		// Use this for initialization
 		void Start () {
