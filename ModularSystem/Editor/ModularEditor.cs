@@ -23,7 +23,7 @@ namespace ModularSystem{
 		
 		private int drawingListIndex;
 		private int partListIndex;
-		//private ReorderableList activateList;
+		private ReorderableList activateList;
 		private GameObject lastPreviewGameObject;
 		private Part selectingPart;
 		private List<GameObject> previewGameObjects = new List<GameObject>();
@@ -50,6 +50,29 @@ namespace ModularSystem{
 			
 			ClearPreviewGameObjects();
 			
+		}
+		
+		void OnSceneGUI( )
+		{
+			// draw handles
+			
+			foreach(PartSet ps in modularSystem.partSetList.ToArray()){
+				
+				Handles.color = Color.blue;
+				GUIStyle style = new GUIStyle();
+				style.normal.textColor = Color.red;
+				
+				Handles.Label(ps.attachTransform.position, ps.name + "[" + ps.partList.Count + "]", style);
+				Handles.DrawWireCube(ps.attachTransform.position,new Vector3(0.2f,0.2f,0.2f));
+				
+				if(activateList!= null && activateList.list == ps.partList){
+				
+					ps.attachTransform.position = Handles.PositionHandle(ps.attachTransform.position,Quaternion.identity);
+				}
+				
+				
+				
+			}
 		}
 		
 		
@@ -126,7 +149,7 @@ namespace ModularSystem{
 				
 			case StartingMethod.OnCall:
 				
-				EditorGUILayout.HelpBox("Procedural generation will be execute when player called [ModuleSystem.StartGenerate] function.",MessageType.Info);
+				EditorGUILayout.HelpBox("Procedural generation will be executed when player called [ModuleSystem.StartGenerate] function.",MessageType.Info);
 				
 				break;
 				
@@ -176,7 +199,7 @@ namespace ModularSystem{
 							
 							if(ps.attachTransform && ps.attachTransform.gameObject){
 								
-								if(ps.name.Contains("new Part Set")) ps.name = ps.attachTransform.gameObject.name;
+								if(ps.name.Contains("new Part Set") || ps.name == "") ps.name = ps.attachTransform.gameObject.name;
 								
 							}
 							
@@ -259,6 +282,11 @@ namespace ModularSystem{
 			
 			Repaint();
 			
+			if(GUI.changed) 
+			{
+
+				EditorUtility.SetDirty(target);
+			}
 		}
 		
 		
@@ -349,7 +377,7 @@ namespace ModularSystem{
 			newPart.rotation = Vector3.zero;
 			newPart.scale = Vector3.one;
 			
-			newPart.weight = 0;
+			newPart.weight = 1;
 			
 			rl.list.Add(newPart);
 			
@@ -368,7 +396,7 @@ namespace ModularSystem{
 			ClearPreviewGameObjects();
 			
 			int index = list.index;
-			//activateList = list;
+			activateList = list;
 			selectingPart = (Part)list.list[index];
 			Transform attachTransform = modularSystem.partSetList[drawingListIndex].attachTransform;
 			
@@ -425,7 +453,7 @@ namespace ModularSystem{
 			
 			p.prefab = (GameObject)EditorGUI.ObjectField(new Rect(rect.x + 10, rect.y + 110, rect.width - 18, 15),"Part Prefab:",p.prefab,typeof(GameObject),true);
 			
-			if(p.prefab && p.name.Contains("NewPart")) p.name = p.prefab.name;
+			if(p.prefab && p.name.Contains("NewPart") || p.name == "") p.name = p.prefab.name;
 		}
 		
 		
