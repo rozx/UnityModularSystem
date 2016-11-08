@@ -1,7 +1,7 @@
 # Unity Modular System
 Unity Modular system let's you create game object with procedural generated parts. 
 
-With editable random seed mode and starting method, it provides the user unlimited possiablity.
+With editable random seed mode and starting method, it provides the user unlimited possibility.
 
 No coding skill required.
 

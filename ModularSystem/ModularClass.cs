@@ -1,7 +1,7 @@
 ﻿// Defines modular classes here
 // Author: Heavyskymobile - Rozx
-// Date: 2016-11-05
-// Version 0.1a
+// Date: 2016-11-07
+// Version 0.3
 
 using UnityEngine;
 using System.Collections;
