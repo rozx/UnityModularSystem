@@ -1,0 +1,563 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000014098848914}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010665344824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000011522544884}
+  m_Layer: 0
+  m_Name: Bench
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011597342826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000010622765232}
+  m_Layer: 0
+  m_Name: Corner2
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011746602944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000012788632710}
+  m_Layer: 0
+  m_Name: Corner4
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012819988248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000013837352588}
+  m_Layer: 0
+  m_Name: Bench2
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013344571610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000012172001964}
+  m_Layer: 0
+  m_Name: Corner1
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013692995550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000012589088470}
+  m_Layer: 0
+  m_Name: Fountain
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013843631112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000012849063128}
+  m_Layer: 0
+  m_Name: Corner3
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000014098848914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000011162197078}
+  - component: {fileID: 33000010034264090}
+  - component: {fileID: 23000014183175266}
+  - component: {fileID: 64000010098707684}
+  - component: {fileID: 114000011982993750}
+  m_Layer: 0
+  m_Name: ModularExample
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010622765232
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011597342826}
+  m_LocalRotation: {x: -0.00000019861236, y: -0.7071068, z: -0.7071068, w: 0.00000019861236}
+  m_LocalPosition: {x: -3.05, y: -2.46, z: 0.43}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -179.99998}
+--- !u!4 &4000011162197078
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014098848914}
+  m_LocalRotation: {x: -0.00000019861236, y: 0.7071068, z: 0.7071068, w: 0.00000019861236}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4000012172001964}
+  - {fileID: 4000010622765232}
+  - {fileID: 4000012849063128}
+  - {fileID: 4000012788632710}
+  - {fileID: 4000012589088470}
+  - {fileID: 4000011522544884}
+  - {fileID: 4000013837352588}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 179.99998}
+--- !u!4 &4000011522544884
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010665344824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.04, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4000012172001964
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013344571610}
+  m_LocalRotation: {x: -0.00000019861236, y: -0.7071068, z: -0.7071068, w: 0.00000019861236}
+  m_LocalPosition: {x: 3.27, y: -2.75, z: 0.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -179.99998}
+--- !u!4 &4000012589088470
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013692995550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0, z: 2.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4000012788632710
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011746602944}
+  m_LocalRotation: {x: -0.00000019861236, y: -0.7071068, z: -0.7071068, w: 0.00000019861236}
+  m_LocalPosition: {x: -2.965, y: 2.37, z: 0.43}
+  m_LocalScale: {x: 1, y: 0.9999998, z: 0.9999998}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -179.99998}
+--- !u!4 &4000012849063128
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013843631112}
+  m_LocalRotation: {x: -0.00000019861236, y: -0.7071068, z: -0.7071068, w: 0.00000019861236}
+  m_LocalPosition: {x: 2.97, y: 3.17, z: 0.43}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -179.99998}
+--- !u!4 &4000013837352588
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012819988248}
+  m_LocalRotation: {x: -0, y: -0, z: -3.3087225e-24, w: 1}
+  m_LocalPosition: {x: 0, y: 3.04, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000011162197078}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23000014183175266
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014098848914}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: cd755f09272c3854ca39b842f57debc5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33000010034264090
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014098848914}
+  m_Mesh: {fileID: 4300006, guid: 72e643619fa32984785527a0c110a313, type: 3}
+--- !u!64 &64000010098707684
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014098848914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 72e643619fa32984785527a0c110a313, type: 3}
+--- !u!114 &114000011982993750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014098848914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d213d2d0d67a2d4b88390b9d52c4a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomSeed: 0
+  mySeedMode: 0
+  myStartMethod: 0
+  partSetList:
+  - isActivate: 1
+    name: Corner1
+    attachTransform: {fileID: 4000012172001964}
+    partList:
+    - name: Tree_1
+      position: {x: 0, y: 1.26, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 182448, guid: 357a66039fecd22469b4e4ea64729751, type: 2}
+      weight: 0
+    - name: Tree_1_Autumn
+      position: {x: 0, y: 1.24, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 133324, guid: a15073618cf119244b61ca28799a1d6c, type: 2}
+      weight: 0
+    - name: Tree_2
+      position: {x: 0, y: 1.18, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 151392, guid: 018f99568725bb74a95da394773e483b, type: 2}
+      weight: 0
+    - name: Tree_2_Autumn
+      position: {x: 0, y: 1.27, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 198420, guid: 8248f278a99a4a046823f1fd3bbacc23, type: 2}
+      weight: 0
+    - name: Tree_3
+      position: {x: 0, y: 0.95, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 188120, guid: c8a2cf893b362b14784799d9219265da, type: 2}
+      weight: 0
+    - name: Tree_3_Autumn
+      position: {x: 0, y: 0.98, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 100702, guid: 57055804781fa4347b667ebf0a73f239, type: 2}
+      weight: 0
+    - name: Tree_4
+      position: {x: 0, y: 0.91, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 119206, guid: db9e8f7bc8c5778479ddc55486de4558, type: 2}
+      weight: 0
+    - name: Tree_4_Autumn
+      position: {x: 0, y: 0.89, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 107626, guid: bcc0a35f1415b2745a222e14393d4318, type: 2}
+      weight: 0
+  - isActivate: 1
+    name: Fountain
+    attachTransform: {fileID: 4000012589088470}
+    partList:
+    - name: Fountain1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 124066, guid: 3aea2b1d4d0db3542af1e9d3474cf6fe, type: 2}
+      weight: 0
+    - name: Fountain2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 155698, guid: dd407b8b12f4ae245b5d40058a3d72d8, type: 2}
+      weight: 0
+  - isActivate: 1
+    name: Bench
+    attachTransform: {fileID: 4000011522544884}
+    partList:
+    - name: Bench
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -90}
+      scale: {x: 0.5, y: 0.5, z: 0.5}
+      prefab: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 2}
+      weight: 0
+  - isActivate: 1
+    name: Bench2
+    attachTransform: {fileID: 4000013837352588}
+    partList:
+    - name: Bench
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 90}
+      scale: {x: 0.5, y: 0.5, z: 0.5}
+      prefab: {fileID: 106578, guid: ccf13c7381ca25349b107bbb9423e1bd, type: 2}
+      weight: 0
+  - isActivate: 1
+    name: Corner2
+    attachTransform: {fileID: 4000010622765232}
+    partList:
+    - name: Tree_1
+      position: {x: 0, y: 1.26, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 182448, guid: 357a66039fecd22469b4e4ea64729751, type: 2}
+      weight: 0
+    - name: Tree_1_Autumn
+      position: {x: 0, y: 1.24, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 133324, guid: a15073618cf119244b61ca28799a1d6c, type: 2}
+      weight: 0
+    - name: Tree_2
+      position: {x: 0, y: 1.18, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 151392, guid: 018f99568725bb74a95da394773e483b, type: 2}
+      weight: 0
+    - name: Tree_2_Autumn
+      position: {x: 0, y: 1.27, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 198420, guid: 8248f278a99a4a046823f1fd3bbacc23, type: 2}
+      weight: 0
+    - name: Tree_3
+      position: {x: 0, y: 0.95, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 188120, guid: c8a2cf893b362b14784799d9219265da, type: 2}
+      weight: 0
+    - name: Tree_3_Autumn
+      position: {x: 0, y: 0.98, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 100702, guid: 57055804781fa4347b667ebf0a73f239, type: 2}
+      weight: 0
+    - name: Tree_4
+      position: {x: 0, y: 0.91, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 119206, guid: db9e8f7bc8c5778479ddc55486de4558, type: 2}
+      weight: 0
+    - name: Tree_4_Autumn
+      position: {x: 0, y: 0.89, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 107626, guid: bcc0a35f1415b2745a222e14393d4318, type: 2}
+      weight: 0
+  - isActivate: 1
+    name: Corner3
+    attachTransform: {fileID: 4000012849063128}
+    partList:
+    - name: Tree_1
+      position: {x: 0, y: 1.26, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 182448, guid: 357a66039fecd22469b4e4ea64729751, type: 2}
+      weight: 0
+    - name: Tree_1_Autumn
+      position: {x: 0, y: 1.24, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 133324, guid: a15073618cf119244b61ca28799a1d6c, type: 2}
+      weight: 0
+    - name: Tree_2
+      position: {x: 0, y: 1.18, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 151392, guid: 018f99568725bb74a95da394773e483b, type: 2}
+      weight: 0
+    - name: Tree_2_Autumn
+      position: {x: 0, y: 1.27, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 198420, guid: 8248f278a99a4a046823f1fd3bbacc23, type: 2}
+      weight: 0
+    - name: Tree_3
+      position: {x: 0, y: 0.95, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 188120, guid: c8a2cf893b362b14784799d9219265da, type: 2}
+      weight: 0
+    - name: Tree_3_Autumn
+      position: {x: 0, y: 0.98, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 100702, guid: 57055804781fa4347b667ebf0a73f239, type: 2}
+      weight: 0
+    - name: Tree_4
+      position: {x: 0, y: 0.91, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 119206, guid: db9e8f7bc8c5778479ddc55486de4558, type: 2}
+      weight: 0
+    - name: Tree_4_Autumn
+      position: {x: 0, y: 0.89, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 107626, guid: bcc0a35f1415b2745a222e14393d4318, type: 2}
+      weight: 0
+  - isActivate: 1
+    name: Corner4
+    attachTransform: {fileID: 4000012788632710}
+    partList:
+    - name: Tree_1
+      position: {x: 0, y: 1.26, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 182448, guid: 357a66039fecd22469b4e4ea64729751, type: 2}
+      weight: 0
+    - name: Tree_1_Autumn
+      position: {x: 0, y: 1.24, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 133324, guid: a15073618cf119244b61ca28799a1d6c, type: 2}
+      weight: 0
+    - name: Tree_2
+      position: {x: 0, y: 1.18, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 151392, guid: 018f99568725bb74a95da394773e483b, type: 2}
+      weight: 0
+    - name: Tree_2_Autumn
+      position: {x: 0, y: 1.27, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 198420, guid: 8248f278a99a4a046823f1fd3bbacc23, type: 2}
+      weight: 0
+    - name: Tree_3
+      position: {x: 0, y: 0.95, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 188120, guid: c8a2cf893b362b14784799d9219265da, type: 2}
+      weight: 0
+    - name: Tree_3_Autumn
+      position: {x: 0, y: 0.98, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 100702, guid: 57055804781fa4347b667ebf0a73f239, type: 2}
+      weight: 0
+    - name: Tree_4
+      position: {x: 0, y: 0.91, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 119206, guid: db9e8f7bc8c5778479ddc55486de4558, type: 2}
+      weight: 0
+    - name: Tree_4_Autumn
+      position: {x: 0, y: 0.89, z: 0}
+      rotation: {x: -90, y: 0, z: 0}
+      scale: {x: 1, y: 1, z: 1}
+      prefab: {fileID: 107626, guid: bcc0a35f1415b2745a222e14393d4318, type: 2}
+      weight: 0
