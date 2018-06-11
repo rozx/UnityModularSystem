@@ -27,6 +27,11 @@ No coding skill required.
 
 # Update Logs
 
+##2018-06-11 V0.4
+- Done: Modified .gitignore.
+	Fixed the bug when entering play mode, the preview still exist.
+	Added two .unitypackage(one with example, one without) with latest unity version 2018.1.
+
 ##2016-11-07 V0.3
 - Done: Attached transform handlers & lable
 		Modular system script(Now it can be generated when scene started).
